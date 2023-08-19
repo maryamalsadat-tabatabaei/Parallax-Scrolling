@@ -4,12 +4,9 @@
 
 @layer base {
   body {
-    @apply bg-gradient-to-r from-indigo-900 to-blue-300 min-h-screen overflow-x-hidden;
+    @apply bg-gradient-to-r from-indigo-900 to-blue-300 min-h-screen overflow-x-hidden scroll-smooth;
   }
   .active {
     @apply bg-white text-blue-700 font-bold;
   }
-  /* section::before {
-    @apply content-none absolute bottom-0 w-full h-28 bg-gradient-to-t from-[#1c0522] to-transparent z-10;
-  } */
 }

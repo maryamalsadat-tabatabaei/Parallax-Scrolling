@@ -1,16 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 const Home = () => {
-  const [starsElemetStyle, setStarsElemetStyle] = useState("left-0");
-  const [moonElemetStyle, setMoonElemetStyle] = useState("top-0");
-  const [mountainsBehindElemetStyle, setMountainsBehindElemetStyle] =
-    useState("top-0");
-  const [mountainsFrontElemetStyle, setMountainsFrontElemetStyle] =
-    useState("top-0");
-  const [textElemetStyle, setTextElemetStyle] = useState("right-[-350px]");
-  const [buttonElemetStyle, setButtonElemetStyle] = useState("translate-y-20");
-  const [headerElemetStyle, setHeaderElemetStyle] = useState("top-0");
-
+  const [offsetY, setOffsetY] = useState(0);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -18,17 +9,7 @@ const Home = () => {
     };
   }, []);
 
-  const handleScroll = () => {
-    let scrollY = window.scrollY;
-    setStarsElemetStyle(`translate-x-[${scrollY * 0.25}px]`);
-    setMoonElemetStyle(`-translate-y-[${scrollY * 1.05}px]`);
-    setMountainsBehindElemetStyle(`-translate-y-[${scrollY * 0.5}px]`);
-    setMountainsFrontElemetStyle(`-translate-y-[${scrollY * 0}px]`);
-    setTextElemetStyle(`mt-[${scrollY * 1.5}px] mr-[${scrollY * 4}px]`);
-    setButtonElemetStyle(`mt-[${scrollY * 1.5}px]`);
-    setHeaderElemetStyle(`-translate-y-[${scrollY * 0.5}px]`);
-  };
-
+  const handleScroll = () => setOffsetY(window.scrollY);
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -36,13 +17,40 @@ const Home = () => {
     }
   };
 
+  const starsElemetStyle = {
+    transform: offsetY !== 0 && `translateX(${offsetY * 0.25}px)`,
+  };
+  const moonElemetStyle = {
+    transform: offsetY !== 0 && `translateY(${offsetY * 1.05}px)`,
+  };
+  const mountainsBehindElemetStyle = {
+    transform: offsetY !== 0 && `translateY(${offsetY * 0.5}px)`,
+  };
+  const mountainsFrontElemetStyle = {
+    transform: offsetY !== 0 && `translateY(${-offsetY * 0}px)`,
+  };
+  const textElementStyle = {
+    marginTop: offsetY !== 0 && `${offsetY * 1.5}px`,
+    marginRight: offsetY !== 0 && `${offsetY * 4}px`,
+  };
+  const buttonElemetStyle = {
+    marginTop: offsetY !== 0 && `${offsetY * 1.5}px`,
+  };
+  const headerElemetStyle = {
+    transform: offsetY !== 0 && `translateY(${-offsetY * 0.5}px)`,
+  };
+
   return (
     <>
       <header
-        className={`${headerElemetStyle} absolute left-0 p-5 w-full z-50`}
+        style={headerElemetStyle}
+        className="absolute left-0 top-0 p-5 w-full z-50"
       >
-        <nav className="flex items-center justify-between text-white p-2">
-          <Link to={"/"} className="font-bold uppercase tracking-wider ml-4">
+        <nav className="flex flex-wrap items-center justify-between text-white p-2">
+          <Link
+            to={"/"}
+            className="font-bold text-xl uppercase tracking-wider ml-4"
+          >
             Logo
           </Link>
 
@@ -64,7 +72,7 @@ const Home = () => {
                 className={`${(isActive) =>
                   isActive
                     ? "active"
-                    : ""}  hover:text-blue-700  hover:font-bold  rounded-full py-2 px-4 `}
+                    : ""}  hover:text-blue-700 hover:font-bold rounded-full py-2 px-4 `}
               >
                 Contact
               </NavLink>
@@ -75,7 +83,7 @@ const Home = () => {
                 className={`${(isActive) =>
                   isActive
                     ? "active"
-                    : ""} hover:text-blue-700  hover:font-bold  rounded-full py-2 px-4 `}
+                    : ""} hover:text-blue-700 hover:font-bold rounded-full py-2 px-4 `}
               >
                 Collections
               </NavLink>
@@ -86,7 +94,7 @@ const Home = () => {
                 className={`${(isActive) =>
                   isActive
                     ? "active"
-                    : ""} hover:text-blue-700  hover:font-bold  rounded-full py-2 px-4 `}
+                    : ""} hover:text-blue-700 hover:font-bold rounded-full py-2 px-4 `}
               >
                 About
               </NavLink>
@@ -96,97 +104,76 @@ const Home = () => {
       </header>
       <section className="overflow-hidden before:absolute before:bottom-0 before:w-full before:h-32 before:z-10 before:bg-gradient-to-t from-[#1c0522] to-transparent flex items-center justify-center relative p-40  h-screen w-full ">
         <img
-          className={`${starsElemetStyle} absolute pointer-events-none top-0 h-full w-full object-cover`}
+          style={starsElemetStyle}
+          className="absolute pointer-events-none left-0 top-0 h-full w-full object-cover"
           src="images/stars.png"
           alt="stars"
         />
+
         <img
-          className={`${moonElemetStyle}} absolute pointer-events-none  left-0 h-full w-full object-cover mix-blend-screen`}
+          style={moonElemetStyle}
+          className="absolute pointer-events-none top-0 left-0 h-full w-full object-cover mix-blend-screen"
           src="images/moon.png"
           alt="moon"
         />
         <img
-          className={`${mountainsBehindElemetStyle} absolute pointer-events-none  left-0 h-full w-full object-cover z-11`}
+          style={mountainsBehindElemetStyle}
+          className="absolute pointer-events-none -top-20 left-0 h-full w-full object-cover z-11"
           src="images/mountains_behind.png"
           alt="mountain-behind"
         />
         <h2
-          className={`${textElemetStyle} absolute text-white text-[7.5vw] z-9`}
+          style={textElementStyle}
+          className="absolute right-[-350px] text-white font-extrabold text-[7.5vw] z-9"
         >
-          Moon light{" "}
+          Moon Light{" "}
         </h2>
         <button
+          style={buttonElemetStyle}
           onClick={() => scrollToSection("explore")}
-          className={`${buttonElemetStyle} inline-block  bg-white px-7 py-2 text-[#2b1055] text-xl z-10 rounded-3xl`}
+          className="hover:translate-y-16 transition-all hover:duration-150 hover:ease-in-out inline-block bg-white px-7 py-2 translate-y-20 text-[#2b1055] text-xl font-bold z-10 rounded-3xl"
         >
           <Link>Explore</Link>
         </button>
         <img
-          className={`${mountainsFrontElemetStyle} absolute  pointer-events-none
-           left-0 h-full w-full object-cover`}
+          style={mountainsFrontElemetStyle}
+          className="absolute pointer-events-none top-0
+           left-0 h-full w-full object-cover"
           src="images/mountains_front.png"
           alt="mountain-front"
         />
       </section>
       <div id="explore" className="relative p-10 bg-[#1c0522]">
-        <h2 className="text-3xl mb-5 text-white">Parallax Scrolling</h2>
+        <h2 className="text-4xl mb-5 text-bold text-white">
+          Parallax Scrolling
+        </h2>
         <p className="text-lg text-white">
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised words which don't look even slightly believable.
-          If you are going to use a passage of Lorem Ipsum, you need to be sure
-          there isn't anything embarrassing hidden in the middle of text. All
-          the Lorem Ipsum generators on the Internet tend to repeat predefined
-          chunks as necessary, making this the first true generator on the
-          Internet. It uses a dictionary of over 200 Latin words, combined with
-          a handful of model sentence structures, to generate Lorem Ipsum which
-          looks reasonable. The generated Lorem Ipsum is therefore always free
-          from repetition, injected humour, or non-characteristic words etc. t
-          is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using 'Content here, content here', making it
-          look like readable English. Many desktop publishing packages and web
-          page editors now use Lorem Ipsum as their default model text, and a
-          search for 'lorem ipsum' will uncover many web sites still in their
-          infancy. Various versions have evolved over the years, sometimes by
-          accident, sometimes on purpose (injected humour and the like).
+          Parallax scrolling is a visual effect used in web design and computer
+          graphics to create an illusion of depth and movement on a
+          two-dimensional surface, typically a webpage. It involves multiple
+          layers of content moving at different speeds as the user scrolls down
+          the page, creating the perception of depth and perspective.
           <br />
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised words which don't look even slightly believable.
-          If you are going to use a passage of Lorem Ipsum, you need to be sure
-          there isn't anything embarrassing hidden in the middle of text. All
-          the Lorem Ipsum generators on the Internet tend to repeat predefined
-          chunks as necessary, making this the first true generator on the
-          Internet. It uses a dictionary of over 200 Latin words, combined with
-          a handful of model sentence structures, to generate Lorem Ipsum which
-          looks reasonable. The generated Lorem Ipsum is therefore always free
-          from repetition, injected humour, or non-characteristic words etc.
+          The concept is based on the parallax effect, which is the apparent
+          displacement or difference in the position of an object when viewed
+          from two different points. In the context of web design, parallax
+          scrolling is achieved by arranging different elements (such as images,
+          text, and graphics) on different layers, each moving at varying speeds
+          as the user scrolls. This effect gives the illusion that some elements
+          are closer to the viewer while others are farther away, creating a
+          sense of depth and immersion.
           <br />
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised words which don't look even slightly believable.
-          If you are going to use a passage of Lorem Ipsum, you need to be sure
-          there isn't anything embarrassing hidden in the middle of text. All
-          the Lorem Ipsum generators on the Internet tend to repeat predefined
-          chunks as necessary, making this the first true generator on the
-          Internet. It uses a dictionary of over 200 Latin words, combined with
-          a handful of model sentence structures, to generate Lorem Ipsum which
-          looks reasonable. The generated Lorem Ipsum is therefore always free
-          from repetition, injected humour, or non-characteristic words etc.
+          Parallax scrolling is often used to enhance the visual appeal of
+          websites and create a more engaging user experience. It has been
+          popularly used in storytelling websites, promotional pages, and
+          landing pages, as it can captivate users and encourage them to explore
+          the content further.
           <br />
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised words which don't look even slightly believable.
-          If you are going to use a passage of Lorem Ipsum, you need to be sure
-          there isn't anything embarrassing hidden in the middle of text. All
-          the Lorem Ipsum generators on the Internet tend to repeat predefined
-          chunks as necessary, making this the first true generator on the
-          Internet. It uses a dictionary of over 200 Latin words, combined with
-          a handful of model sentence structures, to generate Lorem Ipsum which
-          looks reasonable. The generated Lorem Ipsum is therefore always free
-          from repetition, injected humour, or non-characteristic words etc.
+          While parallax scrolling can be visually impressive, it's important to
+          consider that excessive use of the effect can also lead to usability
+          issues, especially on mobile devices or for users with motion
+          sensitivity. As with any design element, balance and careful
+          implementation are key to ensuring a positive user experience.
         </p>
       </div>
     </>
