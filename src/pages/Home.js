@@ -61,7 +61,7 @@ const Home = () => {
                 className={`${(isActive) =>
                   isActive
                     ? "active"
-                    : ""}  hover:text-blue-700  hover:font-bold  rounded-full py-2 px-4 `}
+                    : ""}  hover:text-blue-700 font-medium rounded-full py-2 px-4`}
               >
                 Home
               </NavLink>
@@ -72,7 +72,7 @@ const Home = () => {
                 className={`${(isActive) =>
                   isActive
                     ? "active"
-                    : ""}  hover:text-blue-700 hover:font-bold rounded-full py-2 px-4 `}
+                    : ""}  hover:text-blue-700 font-medium rounded-full py-2 px-4`}
               >
                 Contact
               </NavLink>
@@ -83,7 +83,7 @@ const Home = () => {
                 className={`${(isActive) =>
                   isActive
                     ? "active"
-                    : ""} hover:text-blue-700 hover:font-bold rounded-full py-2 px-4 `}
+                    : ""} hover:text-blue-700 font-medium rounded-full py-2 px-4`}
               >
                 Collections
               </NavLink>
@@ -94,7 +94,7 @@ const Home = () => {
                 className={`${(isActive) =>
                   isActive
                     ? "active"
-                    : ""} hover:text-blue-700 hover:font-bold rounded-full py-2 px-4 `}
+                    : ""} hover:text-blue-700 font-medium rounded-full py-2 px-4`}
               >
                 About
               </NavLink>
@@ -131,7 +131,7 @@ const Home = () => {
         <button
           style={buttonElemetStyle}
           onClick={() => scrollToSection("explore")}
-          className="hover:translate-y-16 transition-all hover:duration-150 hover:ease-in-out inline-block bg-white px-7 py-2 translate-y-20 text-[#2b1055] text-xl font-bold z-10 rounded-3xl"
+          className="hover:shadow-[0_0.5em_0.5em_-0.4em_#2b1055] hover:translate-y-[75px] transition-all hover:duration-150 hover:ease-in-out inline-block bg-white px-7 py-2 translate-y-20 text-[#2b1055] text-xl font-bold z-10 rounded-3xl"
         >
           <Link>Explore</Link>
         </button>
