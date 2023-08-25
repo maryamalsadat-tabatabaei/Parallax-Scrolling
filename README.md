@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Parallax Scrolling Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the code for a stunning parallax scrolling website built using React and styled with Tailwind CSS. The website showcases the creative use of the parallax scrolling technique, a popular method in web design that adds depth and dynamism to a two-dimensional surface. The site features captivating visuals, smooth animations, and an engaging user experience. <br/>
 
-## Available Scripts
+<p align="center">
+  <img src="readme-video/parallex-scrolling-video.gif" alt="parallex scrolling video" width="900">
+</p>
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Introduction
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The Parallax Scrolling Website demonstrates the concept of parallax scrolling, where various layers of content move at different speeds as the user scrolls down the page. This movement creates a visually pleasing illusion of depth and perspective, enhancing the overall aesthetics and interaction of the website.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run this website locally, follow these steps:
 
-### `npm run build`
+1. Clone the repository: `git clone https://github.com/maryamalsadat-tabatabaei/Parallax-Scrolling.git`
+2. Navigate to the project directory: `cd Parallax-Scrolling`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
+5. Open your web browser and visit http://localhost:3000 to view the website.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Stunning Parallax Scrolling Effect**: The website employs the parallax scrolling technique to provide an immersive and visually captivating user experience.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Interactive Navigation**: The navigation bar, elegantly styled with Tailwind CSS, offers seamless transitions between different sections of the website.
 
-### `npm run eject`
+**Engaging Call-to-Action Button**: A strategically placed "Explore" button entices users to explore more, smoothly navigating to a specific section when clicked.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Informative Content**: The website provides comprehensive information about the concept and applications of parallax scrolling, making it an educational resource as well as a visual delight.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies Used
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This project is based on the work of [John Smilga](https://github.com/john-smilga/mern-course-jobify), and I would like to acknowledge their contributions. I have made modifications and added new features to extend the functionality of the original project and I built upon that foundation to extend the project's functionality and address specific requirements. However, the core concept and initial implementation were inspired by the course and the work of the original author.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**New Features**
 
-## Learn More
+**React**: A JavaScript library for building dynamic user interfaces.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Tailwind CSS**: A utility-first CSS framework that streamlines the styling process with pre-defined classes. Tailwind CSS's classes enable rapid styling and ensure consistency throughout the website's design.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**React Router**: Facilitates seamless navigation between different sections of the website, enhancing user experience.
 
-### Code Splitting
+**CSS**: Used in conjunction with Tailwind CSS for custom styling.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**HTML**: Provides the structural foundation of the webpage.
