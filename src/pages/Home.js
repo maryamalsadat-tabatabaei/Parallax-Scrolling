@@ -21,7 +21,8 @@ const Home = () => {
     transform: offsetY !== 0 && `translateX(${offsetY * 0.25}px)`,
   };
   const moonElemetStyle = {
-    transform: offsetY !== 0 && `translateY(${offsetY * 1.05}px)`,
+    transform:
+      offsetY !== 0 && `translate(${offsetY * 0.7}px,${offsetY * 1.05}px)`,
   };
   const mountainsBehindElemetStyle = {
     transform: offsetY !== 0 && `translateY(${offsetY * 0.5}px)`,
@@ -30,8 +31,9 @@ const Home = () => {
     transform: offsetY !== 0 && `translateY(${-offsetY * 0}px)`,
   };
   const textElementStyle = {
-    marginTop: offsetY !== 0 && `${offsetY * 1.5}px`,
+    marginTop: offsetY !== 0 && `${offsetY * 1}px`,
     marginRight: offsetY !== 0 && `${offsetY * 4}px`,
+    right: `${-(window.innerWidth / 2 + 50)}px`,
   };
   const buttonElemetStyle = {
     marginTop: offsetY !== 0 && `${offsetY * 1.5}px`,
@@ -39,7 +41,6 @@ const Home = () => {
   const headerElemetStyle = {
     transform: offsetY !== 0 && `translateY(${-offsetY * 0.5}px)`,
   };
-
   return (
     <>
       <header
@@ -54,7 +55,7 @@ const Home = () => {
             Logo
           </Link>
 
-          <ul className="flex space-x-4">
+          <ul className="flex sm:space-x-4 max-sm:flex-col max-sm:gap-2">
             <li>
               <NavLink
                 to="/"
@@ -102,31 +103,31 @@ const Home = () => {
           </ul>
         </nav>
       </header>
-      <section className="overflow-hidden before:absolute before:bottom-0 before:w-full before:h-32 before:z-10 before:bg-gradient-to-t from-[#1c0522] to-transparent flex items-center justify-center relative p-40  h-screen w-full ">
+      <section className="overflow-hidden before:absolute before:bottom-0 before:w-full before:h-32 before:z-10 before:bg-gradient-to-t from-[rgb(66,23,42)] to-transparent flex items-center justify-center relative p-40  h-screen w-full ">
         <img
           style={starsElemetStyle}
-          className="absolute pointer-events-none left-0 top-0 h-full w-full object-cover"
+          className="absolute pointer-events-none left-0 top-0 h-full w-full sm:object-cover "
           src="images/stars.png"
           alt="stars"
         />
 
         <img
           style={moonElemetStyle}
-          className="absolute pointer-events-none top-0 left-0 h-full w-full object-cover mix-blend-screen"
+          className="absolute pointer-events-none top-0 left-0 h-full w-full object-scale-down mix-blend-screen"
           src="images/moon.png"
           alt="moon"
         />
         <img
           style={mountainsBehindElemetStyle}
-          className="absolute pointer-events-none -top-20 left-0 h-full w-full object-cover z-11"
-          src="images/mountains_behind.png"
-          alt="mountain-behind"
+          className="absolute pointer-events-none top-[70px] left-0 h-full w-full sm:object-cover z-11"
+          src="images/mountains-back.png"
+          alt="mountains-back"
         />
         <h2
           style={textElementStyle}
-          className="absolute right-[-350px] text-white font-extrabold text-[7.5vw] z-9"
+          className="absolute text-white font-extrabold text-[7.5vw] z-9"
         >
-          Moon Light{" "}
+          Desert Scene{" "}
         </h2>
         <button
           style={buttonElemetStyle}
@@ -138,12 +139,12 @@ const Home = () => {
         <img
           style={mountainsFrontElemetStyle}
           className="absolute pointer-events-none top-0
-           left-0 h-full w-full object-cover"
-          src="images/mountains_front.png"
-          alt="mountain-front"
+           left-0 h-full w-full sm:object-cover"
+          src="images/desert-front.png"
+          alt="desert-front"
         />
       </section>
-      <div id="explore" className="relative p-10 bg-[#1c0522]">
+      <div id="explore" className="relative p-10 bg-[rgb(66,23,42)]">
         <h2 className="text-4xl mb-5 text-bold text-white">
           Parallax Scrolling
         </h2>
@@ -167,7 +168,18 @@ const Home = () => {
           websites and create a more engaging user experience. It has been
           popularly used in storytelling websites, promotional pages, and
           landing pages, as it can captivate users and encourage them to explore
-          the content further.
+          the content further. In web design, parallax scrolling involves
+          positioning different elements, such as images or text, on separate
+          layers and then moving these layers at varying speeds as the user
+          scrolls down the webpage. This creates a visually engaging and dynamic
+          effect, making the website more interactive and immersive. Parallax
+          scrolling can be used to tell a story, showcase products, or simply
+          add an aesthetically pleasing touch to the website. In video games,
+          parallax scrolling has been used since the early days of 2D games to
+          simulate depth in a side-scrolling environment. By moving background
+          layers slower than the foreground layers, developers could create a
+          sense of distance and movement, even though the game is actually
+          presented on a two-dimensional plane.
           <br />
           While parallax scrolling can be visually impressive, it's important to
           consider that excessive use of the effect can also lead to usability
