@@ -3,7 +3,7 @@
 This repository contains the code for a stunning parallax scrolling website built using React and styled with Tailwind CSS. The website showcases the creative use of the parallax scrolling technique, a popular method in web design that adds depth and dynamism to a two-dimensional surface. The site features captivating visuals, smooth animations, and an engaging user experience. <br/>
 
 <p align="center">
-  <img src="readme-video/parallex-scrolling-video.gif" alt="parallex scrolling video" width="900">
+  <img src="readme-video/parallex-scrolling-video.gif" alt="parallex scrolling video" width="400">
 </p>
 
 ## Table of Contents
