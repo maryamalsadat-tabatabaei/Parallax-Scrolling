@@ -3,7 +3,7 @@
 This repository contains the code for a stunning parallax scrolling website built using React and styled with Tailwind CSS. The website showcases the creative use of the parallax scrolling technique, a popular method in web design that adds depth and dynamism to a two-dimensional surface. The site features captivating visuals, smooth animations, and an engaging user experience. <br/>
 
 <p align="center">
-  <img src="readme-video/parallex-scrolling-video.gif" alt="parallex scrolling video" width="900">
+  <img src="readme-video/parallex-scrolling-video.gif" alt="parallex scrolling video" width="400">
 </p>
 
 ## Table of Contents
@@ -25,7 +25,7 @@ To run this website locally, follow these steps:
 2. Navigate to the project directory: `cd Parallax-Scrolling`
 3. Install dependencies: `npm install`
 4. Start the development server: `npm start`
-5. Open your web browser and visit http://localhost:3000 to view the website.
+5. Open your web browser and visit http://localhost:3000 to view the website
 
 ## Features
 
@@ -38,10 +38,6 @@ To run this website locally, follow these steps:
 **Informative Content**: The website provides comprehensive information about the concept and applications of parallax scrolling, making it an educational resource as well as a visual delight.
 
 ## Technologies Used
-
-This project is based on the work of [John Smilga](https://github.com/john-smilga/mern-course-jobify), and I would like to acknowledge their contributions. I have made modifications and added new features to extend the functionality of the original project and I built upon that foundation to extend the project's functionality and address specific requirements. However, the core concept and initial implementation were inspired by the course and the work of the original author.
-
-**New Features**
 
 **React**: A JavaScript library for building dynamic user interfaces.
 
